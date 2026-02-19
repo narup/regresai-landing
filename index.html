@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regres.ai - LLM & AI Agent Regression Testing</title>
+  <meta name="description" content="Catch regressions before deployment. Replay historical inputs through your AI agents, compare outputs against baselines, and review diffs with your team.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Regres.ai - LLM & AI Agent Regression Testing">
+  <meta property="og:description" content="Catch regressions before deployment. Replay historical inputs through your AI agents, compare outputs against baselines, and review diffs with your team.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://regres.ai">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Regres.ai - LLM & AI Agent Regression Testing">
+  <meta name="twitter:description" content="Catch regressions before deployment. Replay, compare, and review AI agent outputs.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-inner container">
+      <a href="/" class="logo">
+        <div class="logo-icon">R</div>
+        <span class="logo-text">regres<span class="logo-accent">.ai</span></span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#use-cases">Use Cases</a>
+        <a href="https://app.regres.ai" class="btn btn-primary btn-sm">Get Started</a>
+      </div>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">AI Agent Testing Platform</div>
+      <h1 class="hero-title">
+        Know what broke<br>
+        <span class="gradient-text">before your users do</span>
+      </h1>
+      <p class="hero-subtitle">
+        When prompts, system instructions, or LLM versions change, things break silently.
+        Regres.ai replays historical inputs through your agent, compares outputs against baselines,
+        and surfaces the diffs that matter.
+      </p>
+      <div class="hero-actions">
+        <a href="https://app.regres.ai" class="btn btn-primary btn-lg">
+          Start Testing Free
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+          </svg>
+        </a>
+        <a href="#how-it-works" class="btn btn-secondary btn-lg">See How It Works</a>
+      </div>
+
+      <!-- Hero Visual -->
+      <div class="hero-visual">
+        <div class="terminal">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <span class="terminal-title">Test Run #42 &mdash; Prior Auth Agent v2.1</span>
+          </div>
+          <div class="terminal-body">
+            <div class="terminal-line">
+              <span class="t-muted">$</span> <span class="t-cyan">regres</span> run --baseline production-v3 --agent prior-auth-v2.1
+            </div>
+            <div class="terminal-line t-muted">Running 128 test cases against baseline...</div>
+            <div class="terminal-line">&nbsp;</div>
+            <div class="terminal-line">
+              <span class="t-green">&#10003; 119 passed</span>
+              &nbsp;&nbsp;
+              <span class="t-red">&#10007; 6 critical</span>
+              &nbsp;&nbsp;
+              <span class="t-yellow">&#9888; 3 warnings</span>
+            </div>
+            <div class="terminal-line">&nbsp;</div>
+            <div class="terminal-line t-muted">Critical diffs detected:</div>
+            <div class="terminal-line">
+              &nbsp;&nbsp;<span class="t-red">&#9679;</span> <span class="t-cyan">decision</span>: <span class="t-red">"approved"</span> &rarr; <span class="t-green">"denied"</span>
+              <span class="t-muted"> // case #47, prior_auth=null</span>
+            </div>
+            <div class="terminal-line">
+              &nbsp;&nbsp;<span class="t-red">&#9679;</span> <span class="t-cyan">stage</span>: <span class="t-red">"review"</span> &rarr; <span class="t-green">"escalate"</span>
+              <span class="t-muted"> // case #63, insurance=Medicaid</span>
+            </div>
+            <div class="terminal-line">&nbsp;</div>
+            <div class="terminal-line">
+              <span class="t-purple">&#9670; Pattern detected:</span> 4 diffs share <span class="t-cyan">prior_auth=null + insurance=Medicaid</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem -->
+  <section class="problem">
+    <div class="container">
+      <div class="problem-grid">
+        <div class="problem-card">
+          <div class="problem-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z"/>
+            </svg>
+          </div>
+          <h3>Prompt changed?</h3>
+          <p>A single word in your system prompt can flip decisions from "approved" to "denied" across hundreds of cases.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+            </svg>
+          </div>
+          <h3>Model upgraded?</h3>
+          <p>GPT-4o to GPT-4.1, Claude 3.5 to 4 &mdash; model upgrades change behavior in ways you can't predict without testing.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3>No way to know?</h3>
+          <p>Without regression testing, broken AI outputs reach production. You find out from users, not from tests.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-label">Features</div>
+      <h2 class="section-title">Everything you need to ship AI with confidence</h2>
+      <p class="section-subtitle">Regres.ai gives your team a complete regression testing workflow designed specifically for LLM-powered agents.</p>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+            </svg>
+          </div>
+          <h3>Replay Testing</h3>
+          <p>Run your full baseline of historical inputs through new agent versions. Capture every output. Miss nothing.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon accent-purple">
+            <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+          </div>
+          <h3>Structured Diff Analysis</h3>
+          <p>Not just text diffs. Field-level comparison with severity scoring: critical for decision fields, warnings for text changes.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon accent-green">
+            <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3>Human Review Workflow</h3>
+          <p>Approve expected changes, flag regressions, skip unknowns. Approved diffs automatically update your baseline.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon accent-amber">
+            <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+          </div>
+          <h3>Full Audit Trail</h3>
+          <p>Every test run, every review decision, every change tracked with who, what, when. Built for compliance-heavy industries.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon accent-red">
+            <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <h3>Pattern Detection</h3>
+          <p>Automatically groups diffs that share common input attributes. Review 50 similar diffs with one click instead of one at a time.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+            </svg>
+          </div>
+          <h3>API-First</h3>
+          <p>Full REST API with API key auth. Trigger test runs from CI/CD pipelines, import baselines programmatically, export reports.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="container">
+      <div class="section-label">How It Works</div>
+      <h2 class="section-title">Three steps to regression-proof your AI</h2>
+      <p class="section-subtitle">Get from zero to full regression coverage in under 10 minutes.</p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Upload your baseline</h3>
+            <p>Import your historical input/output pairs as JSON or CSV. These become the expected behavior your agent should match.</p>
+            <div class="step-code">
+              <code>[{"input": {"claim_id": "CLM-001", ...}, "expected_output": {"decision": "approved", ...}}]</code>
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Connect your agent</h3>
+            <p>Point Regres.ai at your agent's API endpoint. Configure headers, request templates, and response mappings. Test the connection with one click.</p>
+            <div class="step-code">
+              <code>POST https://api.yourapp.com/agent/evaluate</code>
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Run, review, ship</h3>
+            <p>Launch a test run. Review the diffs. Approve expected changes, flag regressions, and ship with confidence that nothing broke.</p>
+            <div class="step-code">
+              <code>119 passed &bull; 6 critical &bull; 3 warnings &bull; 1 pattern detected</code>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use Cases -->
+  <section class="use-cases" id="use-cases">
+    <div class="container">
+      <div class="section-label">Use Cases</div>
+      <h2 class="section-title">Built for teams where AI outputs matter</h2>
+      <p class="section-subtitle">If your users make decisions based on AI output, you need regression testing.</p>
+
+      <div class="use-cases-grid">
+        <div class="use-case-card">
+          <div class="use-case-icon healthcare">
+            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+            </svg>
+          </div>
+          <h3>Healthcare</h3>
+          <p>Prior authorization, claims processing, clinical decision support. Catch when a model upgrade changes denial rates.</p>
+        </div>
+
+        <div class="use-case-card">
+          <div class="use-case-icon finance">
+            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3>Finance</h3>
+          <p>Risk assessment, compliance checks, fraud detection. Ensure model changes don't silently alter risk scoring.</p>
+        </div>
+
+        <div class="use-case-card">
+          <div class="use-case-icon support">
+            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
+            </svg>
+          </div>
+          <h3>Customer Support</h3>
+          <p>Chatbots, ticket routing, response generation. Verify that prompt updates don't degrade response quality.</p>
+        </div>
+
+        <div class="use-case-card">
+          <div class="use-case-icon insurance">
+            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+            </svg>
+          </div>
+          <h3>Insurance</h3>
+          <p>Underwriting, claims adjudication, policy recommendations. Full audit trail for regulatory compliance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+      <div class="cta-card">
+        <h2>Stop shipping blind</h2>
+        <p>Every prompt change is a deployment. Every model upgrade is a risk. Know exactly what changed before your users find out.</p>
+        <a href="https://app.regres.ai" class="btn btn-primary btn-lg">
+          Get Started Free
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="/" class="logo">
+            <div class="logo-icon">R</div>
+            <span class="logo-text">regres<span class="logo-accent">.ai</span></span>
+          </a>
+          <p class="footer-tagline">LLM & AI Agent Regression Testing</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Product</h4>
+            <a href="#features">Features</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#use-cases">Use Cases</a>
+          </div>
+          <div class="footer-col">
+            <h4>Get Started</h4>
+            <a href="https://app.regres.ai">Sign In</a>
+            <a href="https://app.regres.ai">Dashboard</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Regres.ai. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
