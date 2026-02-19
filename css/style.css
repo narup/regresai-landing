@@ -94,14 +94,7 @@ img {
 .logo-icon {
   width: 32px;
   height: 32px;
-  background: linear-gradient(135deg, #22d3ee, #a78bfa);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 16px;
-  color: #fff;
+  flex-shrink: 0;
 }
 
 .logo-text {
@@ -129,6 +122,14 @@ img {
 
 .nav-links a:hover {
   color: var(--text-primary);
+}
+
+.nav-links a.btn-primary {
+  color: #0a0a0b;
+}
+
+.nav-links a.btn-primary:hover {
+  color: #0a0a0b;
 }
 
 .mobile-menu-btn {
