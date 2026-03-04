@@ -44,7 +44,6 @@
       </a>
       <div class="nav-links" id="navLinks">
         <a href="#platform">Platform</a>
-        <a href="#how-it-works">How It Works</a>
         <a href="#use-cases">Use Cases</a>
         <a href="https://app.regres.ai" class="btn btn-primary btn-sm">Get Started</a>
       </div>
@@ -76,7 +75,7 @@
           </a>
         </div>
         <div class="btn-frame">
-          <a href="#how-it-works" class="btn btn-secondary btn-lg">See How It Works</a>
+          <a href="#platform" class="btn btn-secondary btn-lg">See How It Works</a>
         </div>
       </div>
     </div>
@@ -86,113 +85,114 @@
   <section class="platform" id="platform">
     <div class="container">
       <div class="section-label">Platform</div>
-      <h2 class="section-title">Complete AI visibility.</h2>
+      <h2 class="section-title">Build trust in every AI decision.</h2>
 
-      <div class="grid-frame">
-      <div class="platform-grid">
-        <div class="platform-card">
-          <div class="platform-card-header">
-            <div class="platform-icon">
-              <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div class="two-tracks">
+        <div class="track">
+          <div class="track-header">
+            <div class="track-icon">
+              <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
               </svg>
             </div>
             <h3>Regression Testing</h3>
+            <p class="track-subtitle">Catch regressions before deploy</p>
           </div>
-          <p>Replay inputs through new agent versions. Catch what broke.</p>
-          <ul class="platform-checklist">
+          <div class="track-steps">
+            <div class="track-step">
+              <div class="track-step-num">1</div>
+              <div>
+                <strong>Build a baseline</strong>
+                <p>Import known input/output pairs that represent correct behavior for your agent.</p>
+              </div>
+            </div>
+            <div class="track-step">
+              <div class="track-step-num">2</div>
+              <div>
+                <strong>Replay &amp; compare</strong>
+                <p>Run baseline inputs through your agent API after model, prompt, or code changes. Regres diffs every field with severity scoring.</p>
+              </div>
+            </div>
+            <div class="track-step">
+              <div class="track-step-num">3</div>
+              <div>
+                <strong>Review &amp; ship</strong>
+                <p>Approve expected changes, flag regressions. Track prompt versions and model metadata. Deploy with confidence.</p>
+              </div>
+            </div>
+          </div>
+          <ul class="track-features">
             <li>Baseline management with import/export</li>
-            <li>Field-level diffs with severity scoring</li>
-            <li>Human review: approve, flag, skip</li>
+            <li>Scheduled runs via cron</li>
+            <li>Email alerts on regressions</li>
           </ul>
         </div>
 
-        <div class="platform-card">
-          <div class="platform-card-header">
-            <div class="platform-icon">
-              <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="track">
+          <div class="track-header">
+            <div class="track-icon">
+              <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
               </svg>
             </div>
-            <h3>LLM Auditing</h3>
+            <h3>Production Auditing</h3>
+            <p class="track-subtitle">Monitor live AI accuracy</p>
           </div>
-          <p>See every production decision. Configurable sampling.</p>
-          <ul class="platform-checklist">
-            <li>Drop-in SDK for Go, Python, JS</li>
-            <li>OpenAI & Anthropic API integration</li>
-            <li>Real-time usage dashboards</li>
-          </ul>
-        </div>
-
-        <div class="platform-card">
-          <div class="platform-card-header">
-            <div class="platform-icon">
-              <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
-              </svg>
+          <div class="track-steps">
+            <div class="track-step">
+              <div class="track-step-num">1</div>
+              <div>
+                <strong>Instrument with SDK</strong>
+                <p>Drop in our SDK for Go, Python, or JS. It samples real input/output pairs from production with configurable rates.</p>
+              </div>
             </div>
-            <h3>Prompt Management</h3>
-          </div>
-          <p>Version prompts. Test before deploying.</p>
-          <ul class="platform-checklist">
-            <li>Version control for system prompts</li>
-            <li>Test changes against baselines</li>
-            <li>Track live version per environment</li>
-          </ul>
-        </div>
-
-        <div class="platform-card">
-          <div class="platform-card-header">
-            <div class="platform-icon">
-              <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-              </svg>
+            <div class="track-step">
+              <div class="track-step-num">2</div>
+              <div>
+                <strong>Flag for review</strong>
+                <p>Configurable rules and AI-assisted assessment surface the outputs that need human attention.</p>
+              </div>
             </div>
-            <h3>Compliance & Reporting</h3>
+            <div class="track-step">
+              <div class="track-step-num">3</div>
+              <div>
+                <strong>Human-in-the-loop</strong>
+                <p>Reviewers evaluate flagged AI decisions for accuracy. Every judgment is tracked with full audit trail.</p>
+              </div>
+            </div>
           </div>
-          <p>Full audit trail. Exportable reports. Built for regulated industries.</p>
-          <ul class="platform-checklist">
-            <li>Every decision tracked with who/what/when</li>
+          <ul class="track-features">
             <li>Role-based access control</li>
-            <li>Spot audit with configurable rules</li>
+            <li>Exportable compliance reports</li>
+            <li>Built for regulated industries</li>
           </ul>
         </div>
       </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- How It Works -->
-  <section class="how-it-works" id="how-it-works">
-    <div class="container">
-      <div class="section-label">How It Works</div>
-      <h2 class="section-title">Three steps. Full coverage.</h2>
-
-      <div class="grid-frame">
-      <div class="steps-grid">
-        <div class="step-card">
-          <div class="step-card-header">
-            <div class="step-number">1</div>
-            <h3>Connect</h3>
+      <div class="capability-row">
+        <div class="capability-card">
+          <div class="capability-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+            </svg>
           </div>
-          <p>Point us at your agent API or drop in the SDK.</p>
-        </div>
-        <div class="step-card">
-          <div class="step-card-header">
-            <div class="step-number">2</div>
-            <h3>Test & monitor</h3>
+          <div>
+            <h4>Prompt Management</h4>
+            <p>Version control for system prompts. Test changes against baselines before deploying. Track which version is live per environment.</p>
           </div>
-          <p>Run baselines before deploy. Sample production decisions.</p>
         </div>
-        <div class="step-card">
-          <div class="step-card-header">
-            <div class="step-number">3</div>
-            <h3>Review & prove</h3>
+        <div class="capability-card">
+          <div class="capability-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
           </div>
-          <p>Approve changes. Export compliance reports.</p>
+          <div>
+            <h4>Compliance Tracking &amp; Reporting</h4>
+            <p>Full audit trail of every AI decision with who reviewed what and when. Role-based access, exportable reports. Built for regulated industries.</p>
+          </div>
         </div>
-      </div>
       </div>
     </div>
   </section>
@@ -201,6 +201,163 @@
   <section class="terminal-section">
     <div class="container">
       <div class="section-label">See It In Action</div>
+
+      <!-- Architecture diagram: Org AI systems → SDK → Regres.ai platform -->
+      <div class="flow-diagram-wrapper">
+        <svg class="flow-diagram" viewBox="0 0 960 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="zoneGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.06"/>
+              <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+
+          <!-- Zone labels -->
+          <text x="164" y="36" text-anchor="middle" fill="#52525b" font-size="10.5" font-weight="600" font-family="Outfit, sans-serif" letter-spacing="0.12em">YOUR INFRASTRUCTURE</text>
+          <text x="796" y="36" text-anchor="middle" fill="#22d3ee" font-size="10.5" font-weight="600" font-family="Outfit, sans-serif" letter-spacing="0.12em" opacity="0.6">REGRES.AI PLATFORM</text>
+
+          <!-- Left zone container (org boundary — dashed) -->
+          <rect x="16" y="50" width="296" height="330" rx="8" stroke="#2a2a2e" stroke-width="1" stroke-dasharray="6 4" fill="none"/>
+
+          <!-- Right zone container (Regres.ai — cyan accent) -->
+          <rect x="648" y="50" width="296" height="330" rx="8" stroke="#22d3ee" stroke-width="1" stroke-opacity="0.2" fill="url(#zoneGlow)"/>
+
+          <!-- Elbow connector flow lines -->
+          <g stroke="#2a2a2e" stroke-width="1">
+            <!-- Left: horizontal stubs from cards to vertical bus -->
+            <line x1="276" y1="108" x2="350" y2="108"/>
+            <line x1="276" y1="178" x2="350" y2="178"/>
+            <line x1="276" y1="248" x2="350" y2="248"/>
+            <line x1="276" y1="318" x2="350" y2="318"/>
+            <!-- Left vertical bus -->
+            <line x1="350" y1="108" x2="350" y2="318"/>
+            <!-- Backbone -->
+            <line x1="350" y1="213" x2="610" y2="213"/>
+            <!-- Right vertical bus -->
+            <line x1="610" y1="95" x2="610" y2="331"/>
+            <!-- Right: horizontal stubs from vertical bus to cards -->
+            <line x1="610" y1="95" x2="684" y2="95"/>
+            <line x1="610" y1="154" x2="684" y2="154"/>
+            <line x1="610" y1="213" x2="684" y2="213"/>
+            <line x1="610" y1="272" x2="684" y2="272"/>
+            <line x1="610" y1="331" x2="684" y2="331"/>
+          </g>
+
+          <!-- Bus junction nodes -->
+          <circle cx="350" cy="213" r="3" fill="#2a2a2e" stroke="#3a3a3f" stroke-width="0.5"/>
+          <circle cx="610" cy="213" r="3" fill="#2a2a2e" stroke="#3a3a3f" stroke-width="0.5"/>
+
+          <!-- Center: SDK badge on backbone -->
+          <line x1="480" y1="72" x2="480" y2="368" stroke="#22d3ee" stroke-width="1" stroke-dasharray="4 4" stroke-opacity="0.10"/>
+          <g transform="translate(480, 213)">
+            <rect x="-24" y="-11" width="48" height="22" rx="4" fill="#111113" stroke="#22d3ee" stroke-width="0.75" stroke-opacity="0.3"/>
+            <text text-anchor="middle" dy="4" fill="#22d3ee" font-size="10" font-weight="700" font-family="JetBrains Mono, monospace" opacity="0.6">SDK</text>
+          </g>
+
+          <!-- Flow label above backbone -->
+          <text x="480" y="195" text-anchor="middle" fill="#52525b" font-size="9" font-family="JetBrains Mono, monospace">AI decision data</text>
+
+          <!-- Animated dots: elbow routes (left → bus → backbone → bus → right) -->
+          <g>
+            <circle r="3" fill="#22d3ee"><animateMotion dur="3s" repeatCount="indefinite" begin="0s" path="M276,108 L350,108 L350,213 L610,213 L610,95 L684,95"/><animate attributeName="opacity" values="0;0.9;0.9;0" dur="3s" repeatCount="indefinite" begin="0s"/></circle>
+            <circle r="3" fill="#22d3ee"><animateMotion dur="2.8s" repeatCount="indefinite" begin="0.6s" path="M276,178 L350,178 L350,213 L610,213 L610,154 L684,154"/><animate attributeName="opacity" values="0;0.9;0.9;0" dur="2.8s" repeatCount="indefinite" begin="0.6s"/></circle>
+            <circle r="3" fill="#22d3ee"><animateMotion dur="3.1s" repeatCount="indefinite" begin="1.3s" path="M276,248 L350,248 L350,213 L610,213 L610,272 L684,272"/><animate attributeName="opacity" values="0;0.9;0.9;0" dur="3.1s" repeatCount="indefinite" begin="1.3s"/></circle>
+            <circle r="3" fill="#22d3ee"><animateMotion dur="2.6s" repeatCount="indefinite" begin="0.9s" path="M276,318 L350,318 L350,213 L610,213 L610,331 L684,331"/><animate attributeName="opacity" values="0;0.9;0.9;0" dur="2.6s" repeatCount="indefinite" begin="0.9s"/></circle>
+            <!-- Cross-lane dots -->
+            <circle r="3" fill="#22d3ee"><animateMotion dur="3.2s" repeatCount="indefinite" begin="2.1s" path="M276,108 L350,108 L350,213 L610,213 L610,272 L684,272"/><animate attributeName="opacity" values="0;0.9;0.9;0" dur="3.2s" repeatCount="indefinite" begin="2.1s"/></circle>
+            <circle r="3" fill="#22d3ee"><animateMotion dur="2.9s" repeatCount="indefinite" begin="1.7s" path="M276,318 L350,318 L350,213 L610,213 L610,95 L684,95"/><animate attributeName="opacity" values="0;0.9;0.9;0" dur="2.9s" repeatCount="indefinite" begin="1.7s"/></circle>
+          </g>
+
+          <!-- Left cards: AI systems (with pulsing active indicator) -->
+          <g font-family="Outfit, sans-serif">
+            <g transform="translate(160, 108)">
+              <rect x="-116" y="-21" width="232" height="42" rx="5" fill="#111113" stroke="#2a2a2e" stroke-width="0.75"/>
+              <circle cx="-96" cy="0" r="3.5" fill="#4ade80" opacity="0.6"><animate attributeName="opacity" values="0.6;0.25;0.6" dur="2s" repeatCount="indefinite"/></circle>
+              <text x="-82" dy="4.5" fill="#a1a1aa" font-size="12.5" font-weight="500">Support Agent</text>
+            </g>
+            <g transform="translate(160, 178)">
+              <rect x="-116" y="-21" width="232" height="42" rx="5" fill="#111113" stroke="#2a2a2e" stroke-width="0.75"/>
+              <circle cx="-96" cy="0" r="3.5" fill="#4ade80" opacity="0.6"><animate attributeName="opacity" values="0.6;0.25;0.6" dur="2.3s" repeatCount="indefinite" begin="0.5s"/></circle>
+              <text x="-82" dy="4.5" fill="#a1a1aa" font-size="12.5" font-weight="500">Claims Processor</text>
+            </g>
+            <g transform="translate(160, 248)">
+              <rect x="-116" y="-21" width="232" height="42" rx="5" fill="#111113" stroke="#2a2a2e" stroke-width="0.75"/>
+              <circle cx="-96" cy="0" r="3.5" fill="#4ade80" opacity="0.6"><animate attributeName="opacity" values="0.6;0.25;0.6" dur="1.8s" repeatCount="indefinite" begin="0.8s"/></circle>
+              <text x="-82" dy="4.5" fill="#a1a1aa" font-size="12.5" font-weight="500">AI Rule Engine</text>
+            </g>
+            <g transform="translate(160, 318)">
+              <rect x="-116" y="-21" width="232" height="42" rx="5" fill="#111113" stroke="#2a2a2e" stroke-width="0.75"/>
+              <circle cx="-96" cy="0" r="3.5" fill="#4ade80" opacity="0.6"><animate attributeName="opacity" values="0.6;0.25;0.6" dur="2.1s" repeatCount="indefinite" begin="1.2s"/></circle>
+              <text x="-82" dy="4.5" fill="#a1a1aa" font-size="12.5" font-weight="500">Risk Engine</text>
+            </g>
+          </g>
+
+          <!-- Right cards: Regres.ai capabilities -->
+          <g font-family="Outfit, sans-serif">
+            <g transform="translate(800, 95)">
+              <rect x="-116" y="-21" width="232" height="42" rx="5" fill="#111113" stroke="#2a2a2e" stroke-width="0.75"/>
+              <rect x="-116" y="-18" width="3" height="36" rx="1" fill="#22d3ee" opacity="0.5"/>
+              <text x="-100" dy="4.5" fill="#fafafa" font-size="12.5" font-weight="500">Audit Dashboard</text>
+            </g>
+            <g transform="translate(800, 154)">
+              <rect x="-116" y="-21" width="232" height="42" rx="5" fill="#111113" stroke="#2a2a2e" stroke-width="0.75"/>
+              <rect x="-116" y="-18" width="3" height="36" rx="1" fill="#22d3ee" opacity="0.5"/>
+              <text x="-100" dy="4.5" fill="#fafafa" font-size="12.5" font-weight="500">AI-Assisted Review</text>
+            </g>
+            <g transform="translate(800, 213)">
+              <rect x="-116" y="-21" width="232" height="42" rx="5" fill="#111113" stroke="#2a2a2e" stroke-width="0.75"/>
+              <rect x="-116" y="-18" width="3" height="36" rx="1" fill="#34d399" opacity="0.5"/>
+              <text x="-100" dy="4.5" fill="#fafafa" font-size="12.5" font-weight="500">Prompt Manager</text>
+            </g>
+            <g transform="translate(800, 272)">
+              <rect x="-116" y="-21" width="232" height="42" rx="5" fill="#111113" stroke="#2a2a2e" stroke-width="0.75"/>
+              <rect x="-116" y="-18" width="3" height="36" rx="1" fill="#22d3ee" opacity="0.5"/>
+              <text x="-100" dy="4.5" fill="#fafafa" font-size="12.5" font-weight="500">Compliance Reports</text>
+            </g>
+            <g transform="translate(800, 331)">
+              <rect x="-116" y="-21" width="232" height="42" rx="5" fill="#111113" stroke="#2a2a2e" stroke-width="0.75"/>
+              <rect x="-116" y="-18" width="3" height="36" rx="1" fill="#a78bfa" opacity="0.5"/>
+              <text x="-100" dy="4.5" fill="#fafafa" font-size="12.5" font-weight="500">Scheduled Tests</text>
+            </g>
+          </g>
+
+          <!-- Regression tests: purple dots reverse elbow (right → left) from Scheduled Tests -->
+          <g>
+            <circle r="2.5" fill="#a78bfa"><animateMotion dur="3.4s" repeatCount="indefinite" begin="0.5s" path="M684,331 L610,331 L610,213 L350,213 L350,108 L276,108"/><animate attributeName="opacity" values="0;0.8;0.8;0" dur="3.4s" repeatCount="indefinite" begin="0.5s"/></circle>
+            <circle r="2.5" fill="#a78bfa"><animateMotion dur="3.1s" repeatCount="indefinite" begin="1.8s" path="M684,331 L610,331 L610,213 L350,213 L350,248 L276,248"/><animate attributeName="opacity" values="0;0.8;0.8;0" dur="3.1s" repeatCount="indefinite" begin="1.8s"/></circle>
+            <circle r="2.5" fill="#a78bfa"><animateMotion dur="2.8s" repeatCount="indefinite" begin="3s" path="M684,331 L610,331 L610,213 L350,213 L350,318 L276,318"/><animate attributeName="opacity" values="0;0.8;0.8;0" dur="2.8s" repeatCount="indefinite" begin="3s"/></circle>
+          </g>
+
+          <!-- Prompt delivery: green dots outbound from Prompt Manager (right → left) -->
+          <g>
+            <circle r="2.5" fill="#34d399"><animateMotion dur="3s" repeatCount="indefinite" begin="0.3s" path="M684,213 L350,213 L350,108 L276,108"/><animate attributeName="opacity" values="0;0.85;0.85;0" dur="3s" repeatCount="indefinite" begin="0.3s"/></circle>
+            <circle r="2.5" fill="#34d399"><animateMotion dur="2.7s" repeatCount="indefinite" begin="1.5s" path="M684,213 L350,213 L350,178 L276,178"/><animate attributeName="opacity" values="0;0.85;0.85;0" dur="2.7s" repeatCount="indefinite" begin="1.5s"/></circle>
+            <circle r="2.5" fill="#34d399"><animateMotion dur="3.2s" repeatCount="indefinite" begin="2.8s" path="M684,213 L350,213 L350,318 L276,318"/><animate attributeName="opacity" values="0;0.85;0.85;0" dur="3.2s" repeatCount="indefinite" begin="2.8s"/></circle>
+          </g>
+
+          <!-- Output elements below right container -->
+          <g font-family="Outfit, sans-serif">
+            <line x1="740" y1="380" x2="740" y2="390" stroke="#a78bfa" stroke-width="1" stroke-dasharray="3 2" stroke-opacity="0.35"/>
+            <g transform="translate(740, 404)">
+              <rect x="-52" y="-12" width="104" height="24" rx="4" fill="#111113" stroke="#a78bfa" stroke-width="0.75" stroke-opacity="0.35"/>
+              <circle cx="-34" cy="0" r="3.5" stroke="#a78bfa" stroke-width="0.8" fill="none" opacity="0.5"/>
+              <text x="-22" dy="3.5" fill="#a78bfa" font-size="9.5" font-weight="500" opacity="0.6">Auditors</text>
+            </g>
+            <line x1="870" y1="380" x2="870" y2="390" stroke="#fbbf24" stroke-width="1" stroke-dasharray="3 2" stroke-opacity="0.35"/>
+            <g transform="translate(870, 404)">
+              <rect x="-52" y="-12" width="104" height="24" rx="4" fill="#111113" stroke="#fbbf24" stroke-width="0.75" stroke-opacity="0.35"/>
+              <rect x="-42" y="-5" width="12" height="9" rx="1" stroke="#fbbf24" stroke-width="0.8" fill="none" opacity="0.5"/>
+              <text x="-22" dy="3.5" fill="#fbbf24" font-size="9.5" font-weight="500" opacity="0.6">Reports</text>
+            </g>
+          </g>
+        </svg>
+        <div class="flow-legend">
+          <span class="flow-legend-item"><span class="legend-dot" style="background:#22d3ee"></span>AI decisions</span>
+          <span class="flow-legend-item"><span class="legend-dot" style="background:#34d399"></span>Prompts</span>
+          <span class="flow-legend-item"><span class="legend-dot" style="background:#a78bfa"></span>Regression tests</span>
+        </div>
+      </div>
+
       <div class="terminal">
         <div class="terminal-header">
           <div class="terminal-dots">
@@ -341,7 +498,6 @@
           <div class="footer-col">
             <h4>Product</h4>
             <a href="#platform">Platform</a>
-            <a href="#how-it-works">How It Works</a>
             <a href="#use-cases">Use Cases</a>
           </div>
           <div class="footer-col">
