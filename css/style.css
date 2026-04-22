@@ -463,7 +463,7 @@ img { max-width: 100%; display: block; }
 /* Capability cards row */
 .capability-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   margin-top: 24px;
 }
@@ -644,11 +644,17 @@ img { max-width: 100%; display: block; }
 }
 
 .use-case-card h3 {
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 0;
   color: var(--text-primary);
+  line-height: 1.3;
 }
+
+.use-case-card-header {
+  align-items: flex-start;
+}
+.use-case-card .use-case-icon { margin-top: 3px; }
 
 .use-case-card p {
   font-size: 1.3rem;
@@ -801,3 +807,146 @@ img { max-width: 100%; display: block; }
     padding: 24px 20px;
   }
 }
+
+/* ────────── Hero additions ────────── */
+.hero-eyebrow {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent, #22d3ee);
+  margin: 0 0 22px 0;
+  opacity: 0.95;
+}
+/* (.hero-provenance retired — provenance now lives in the social-proof
+   block at the bottom of the use-cases section, where it lands after
+   the buyer has read what the product is for.) */
+.social-proof-block {
+  max-width: 760px;
+  margin: 64px auto 0;
+  padding: 28px 32px;
+  border: 1px solid var(--border, #1f1f23);
+  border-radius: 8px;
+  background: rgba(34, 211, 238, 0.03);
+}
+.social-proof-block .social-proof-line {
+  margin: 0;
+  text-align: center;
+  font-size: 1.15rem;
+  line-height: 1.55;
+  color: var(--text-primary, #fafafa);
+  font-weight: 500;
+  letter-spacing: -0.005em;
+}
+
+/* ────────── Section subtitle ────────── */
+.section-subtitle {
+  max-width: 64ch;
+  margin: -8px auto 36px auto;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: var(--text-secondary, #a1a1aa);
+  text-align: center;
+}
+.section-subtitle em { color: var(--text-primary, #fafafa); font-style: normal; font-weight: 500; }
+
+/* ────────── Nav sign-in link ────────── */
+.nav-signin {
+  font-size: 0.9rem;
+  opacity: 0.75;
+}
+.nav-signin:hover { opacity: 1; }
+
+/* ────────── Vs Alternatives ────────── */
+.vs-section {
+  padding: 96px 0 72px;
+  border-top: 1px solid var(--border, #1f1f23);
+  background: linear-gradient(180deg, transparent 0%, rgba(167, 139, 250, 0.03) 100%);
+}
+.vs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 1000px;
+  margin: 36px auto 0;
+}
+.vs-card {
+  padding: 28px 26px;
+  background: rgba(20, 20, 22, 0.6);
+  border: 1px solid var(--border, #1f1f23);
+  border-radius: 8px;
+}
+.vs-card h4 {
+  margin: 0 0 12px 0;
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: var(--text-primary, #fafafa);
+  letter-spacing: -0.01em;
+}
+.vs-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-secondary, #a1a1aa);
+}
+.vs-card code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  background: rgba(34, 211, 238, 0.08);
+  padding: 1px 6px;
+  border-radius: 3px;
+  color: var(--accent, #22d3ee);
+}
+@media (max-width: 720px) {
+  .vs-grid { grid-template-columns: 1fr; }
+}
+
+/* ────────── CTA actions row ────────── */
+.cta-actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+/* ────────── Hero deploy line (OSS positioning) ────────── */
+.hero-deploy {
+  margin-top: 26px;
+  font-size: 0.92rem;
+  color: var(--text-secondary, #a1a1aa);
+  letter-spacing: 0.01em;
+}
+.hero-deploy code {
+  font-family: 'JetBrains Mono', monospace;
+  background: rgba(34, 211, 238, 0.08);
+  border: 1px solid rgba(34, 211, 238, 0.2);
+  color: var(--accent, #22d3ee);
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.88rem;
+}
+
+/* ────────── Nav GitHub link ────────── */
+.nav-github {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+.nav-github:hover { opacity: 1; }
+
+/* ────────── Capability + Vs cards: inline <code> support ────────── */
+.capability-card code,
+.cta-code {
+  font-family: 'JetBrains Mono', monospace;
+  background: rgba(34, 211, 238, 0.08);
+  color: var(--accent, #22d3ee);
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-size: 0.88em;
+}
+
+/* ────────── GitHub icon inside primary button — match button color ────────── */
+.btn-primary svg[viewBox="0 0 24 24"] { color: inherit; }
